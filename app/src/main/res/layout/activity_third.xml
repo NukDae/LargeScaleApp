@@ -16,61 +16,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="97dp" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Layout 4"
-        android:id="@+id/layoutB_4"
-        android:checked="false"
-        android:layout_above="@+id/button_create"
-        android:layout_alignRight="@+id/button_create"
-        android:layout_alignEnd="@+id/button_create"
-        android:layout_marginBottom="53dp"
-        android:layout_alignLeft="@+id/layoutNameField"
-        android:layout_alignStart="@+id/layoutNameField"/>
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Layout 3"
-        android:id="@+id/layoutB_3"
-        android:checked="false"
-        android:layout_above="@+id/layoutB_4"
-        android:layout_alignRight="@+id/button_create"
-        android:layout_alignLeft="@+id/layoutNameField"
-        android:layout_alignStart="@+id/layoutNameField"/>
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Layout 2"
-        android:id="@+id/layoutB_2"
-        android:checked="false"
-        android:layout_above="@+id/layoutB_3"
-        android:layout_alignRight="@+id/button_create"
-        android:layout_alignLeft="@+id/layoutNameField"
-        android:layout_alignStart="@+id/layoutNameField"/>
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Layout 1"
-        android:id="@+id/layoutB_1"
-        android:checked="false"
-        android:layout_above="@+id/layoutB_2"
-        android:layout_alignRight="@+id/button_create"
-        android:layout_alignLeft="@+id/layoutNameField"
-        android:layout_alignStart="@+id/layoutNameField"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Choose Layout"
         android:id="@+id/chooseLayoutTitle"
-        android:layout_above="@+id/layoutB_1"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="57dp"/>
+        android:layout_marginTop="53dp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -81,5 +35,62 @@
         android:layout_centerHorizontal="true"
         android:text=""
         android:singleLine="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/chooseLayoutTitle"
+        android:layout_alignLeft="@+id/layoutNameField"
+        android:layout_alignStart="@+id/layoutNameField"
+        android:layout_marginTop="57dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Layout 1"
+            android:id="@+id/layoutB_1"
+            android:checked="false"
+            android:layout_above="@+id/layoutB_2"
+            android:layout_alignRight="@+id/button_create"
+            android:layout_alignLeft="@+id/layoutNameField"
+            android:layout_alignStart="@+id/layoutNameField"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Layout 2"
+            android:id="@+id/layoutB_2"
+            android:checked="false"
+            android:layout_above="@+id/layoutB_3"
+            android:layout_alignRight="@+id/button_create"
+            android:layout_alignLeft="@+id/layoutNameField"
+            android:layout_alignStart="@+id/layoutNameField"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Layout 3"
+            android:id="@+id/layoutB_3"
+            android:checked="false"
+            android:layout_above="@+id/layoutB_4"
+            android:layout_alignRight="@+id/button_create"
+            android:layout_alignLeft="@+id/layoutNameField"
+            android:layout_alignStart="@+id/layoutNameField"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Layout 4"
+            android:id="@+id/layoutB_4"
+            android:checked="false"
+            android:layout_above="@+id/button_create"
+            android:layout_alignRight="@+id/button_create"
+            android:layout_alignEnd="@+id/button_create"
+            android:layout_marginBottom="53dp"
+            android:layout_alignLeft="@+id/layoutNameField"
+            android:layout_alignStart="@+id/layoutNameField"/>
+
+    </RadioGroup>
 
 </RelativeLayout>

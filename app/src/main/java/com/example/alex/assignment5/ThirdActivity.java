@@ -9,12 +9,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 /**
  * Created by Stephanie on 3/21/2016.
  */
 public class ThirdActivity extends AppCompatActivity
 {
+    // Creates a radioGroup for the layout options
+    private RadioGroup radioGroup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -23,19 +27,32 @@ public class ThirdActivity extends AppCompatActivity
 
         Intent intent = getIntent();
 
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup.clearCheck();
+
+        // Implements an OnCheckedChangeListener for the radio buttons
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+                RadioButton rb = (RadioButton) group.findViewById(checkedId);
+            }
+        });
+
         // Implements an OnClickListener for button_create
         Button button_create = (Button) findViewById(R.id.button_create);
         button_create.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v)
+            public void onClick (View v)
             {
                 finish();
             }
         });
     }
 
-    @Override
+        @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
