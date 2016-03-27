@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.example.alex.assignment5"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="Log In" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SecondActivity"
+            android:label="Main Menu"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alex.helloworld.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ThirdActivity"
+            android:label="Create Building"
+            android:parentActivityName=".SecondActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alex.helloworld.SecondActivity" />
+        </activity>
+        <activity
+            android:name=".FourthActivity"
+            android:label="Action Menu"
+            android:parentActivityName=".ThirdActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alex.helloworld.ThirdActivity" />
+        </activity>
+        <activity
+            android:name=".FifthActivity"
+            android:label="Preferences"
+            android:parentActivityName=".SecondActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alex.helloworld.FourthActivity" />
+        </activity>
+        <activity
+            android:name=".SixthActivity"
+            android:label="Users"
+            android:parentActivityName=".FourthActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alex.helloworld.FifthActivity" />
+        </activity>
+        <activity
+            android:name=".SeventhActivity"
+            android:label="Sensors"
+            android:parentActivityName=".FourthActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alex.helloworld.SixthActivity" />
+        </activity>
+        <activity
+            android:name=".EigthActivity"
+            android:label="Robots"
+            android:parentActivityName=".FourthActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alex.helloworld.SeventhActivity" />
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Preferences"
+        android:id="@+id/usersTitle"
+        android:layout_marginTop="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option 1"
+        android:id="@+id/opt1"
+        android:layout_below="@+id/usersTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:checked="false"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option 2"
+        android:id="@+id/opt2"
+        android:layout_below="@+id/opt1"
+        android:layout_centerHorizontal="true"
+        android:checked="false"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option 3"
+        android:id="@+id/opt3"
+        android:layout_below="@+id/opt2"
+        android:layout_centerHorizontal="true"
+        android:checked="false"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option 4"
+        android:id="@+id/opt4"
+        android:layout_below="@+id/opt3"
+        android:layout_centerHorizontal="true"
+        android:checked="false"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:id="@+id/button6"
+        android:layout_below="@+id/opt4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"/>
+</RelativeLayout>
