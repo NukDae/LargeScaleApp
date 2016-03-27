@@ -1,3 +1,6 @@
+/*
+PreferencesActivity.java
+ */
 package com.example.alex.assignment5;
 
 import android.content.Intent;
@@ -9,20 +12,20 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by Alex on 3/21/2016.
+ * Created by Alex on 3/27/2016.
  */
-public class EigthActivity extends AppCompatActivity
+public class PreferencesActivity extends AppCompatActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eigth);
+        setContentView(R.layout.activity_fifth);
 
         Intent intent = getIntent();
 
         // Implements an OnClickListener for button_back
-        Button button_back = (Button) findViewById(R.id.button9);
+        Button button_back = (Button) findViewById(R.id.button6);
         button_back.setOnClickListener(new View.OnClickListener()
         {
             @Override

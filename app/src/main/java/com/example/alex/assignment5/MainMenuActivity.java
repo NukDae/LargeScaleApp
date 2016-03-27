@@ -2,16 +2,15 @@
 // Team 2
 // ECE 4574
 /*
-SecondActivity.java
+MainMenuActivity.java
 
 This activity is launched when a valid username/password
 combination is entered from MainActivity.java.
-
  */
+
 package com.example.alex.assignment5;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -23,7 +22,10 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
-public class SecondActivity extends AppCompatActivity
+/**
+ * Created by Alex on 3/27/2016.
+ */
+public class MainMenuActivity extends AppCompatActivity
 {
     String buildingName;
 
@@ -77,32 +79,31 @@ public class SecondActivity extends AppCompatActivity
 
         // Implements an OnClickListener for the logout button
         Button logOut = (Button) findViewById(R.id.logoutButton);
-        logOut.setOnClickListener(new View.OnClickListener() {
+        logOut.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 finish();
             }
         });
     }
 
-    public void goToBuilding(View v) {
-
-        // Uses an Intent to transmit user credentials between activities
-        Intent intent = new Intent(this, FourthActivity.class);
+    public void goToBuilding(View v)
+    {
+        Intent intent = new Intent(this, ActionMenuActivity.class);
         startActivity(intent);
     }
 
-    public void createBuilding(View view) {
-
-        // Uses an Intent to transmit user credentials between activities
-        Intent intent = new Intent(this, ThirdActivity.class);
+    public void createBuilding(View view)
+    {
+        Intent intent = new Intent(this, CreateBuildingActivity.class);
         startActivity(intent);
     }
 
-    public void goToPreferences(View view) {
-
-        // Uses an Intent to transmit user credentials between activities
-        Intent intent = new Intent(this, FifthActivity.class);
+    public void goToPreferences(View view)
+    {
+        Intent intent = new Intent(this, PreferencesActivity.class);
         startActivity(intent);
     }
 

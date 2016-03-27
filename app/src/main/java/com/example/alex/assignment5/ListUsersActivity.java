@@ -9,20 +9,20 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by Alex on 3/21/2016.
+ * Created by Alex on 3/27/2016.
  */
-public class FifthActivity extends AppCompatActivity
+public class ListUsersActivity extends AppCompatActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fifth);
+        setContentView(R.layout.activity_sixth);
 
         Intent intent = getIntent();
 
         // Implements an OnClickListener for button_back
-        Button button_back = (Button) findViewById(R.id.button6);
+        Button button_back = (Button) findViewById(R.id.button7);
         button_back.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -9,20 +9,20 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by Alex on 3/21/2016.
+ * Created by Alex on 3/27/2016.
  */
-public class SixthActivity extends AppCompatActivity
+public class ListSensorsActivity extends AppCompatActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sixth);
+        setContentView(R.layout.activity_seventh);
 
         Intent intent = getIntent();
 
         // Implements an OnClickListener for button_back
-        Button button_back = (Button) findViewById(R.id.button7);
+        Button button_back = (Button) findViewById(R.id.button8);
         button_back.setOnClickListener(new View.OnClickListener()
         {
             @Override

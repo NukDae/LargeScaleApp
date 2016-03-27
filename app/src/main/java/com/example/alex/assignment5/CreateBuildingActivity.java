@@ -1,8 +1,16 @@
+// Alex Mun
+// Team 2
+// ECE 4574
+/*
+CreateBuildingActivity.java
+
+The Create Building screen allows the user to
+select the layout and name of the new building.
+ */
 package com.example.alex.assignment5;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,9 +20,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 /**
- * Created by Stephanie on 3/21/2016.
+ * Created by Alex on 3/27/2016.
  */
-public class ThirdActivity extends AppCompatActivity
+public class CreateBuildingActivity extends AppCompatActivity
 {
     // Creates a radioGroup for the layout options
     private RadioGroup radioGroup;
@@ -52,7 +60,7 @@ public class ThirdActivity extends AppCompatActivity
         });
     }
 
-        @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.

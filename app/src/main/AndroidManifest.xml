@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/LargeScaleApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -17,61 +17,68 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".SecondActivity"
+            android:name=".MainMenuActivity"
             android:label="Main Menu"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alex.helloworld.MainActivity" />
+                android:value="com.example.alex.assignment5.MainActivity" />
         </activity>
+
         <activity
-            android:name=".ThirdActivity"
+            android:name=".CreateBuildingActivity"
             android:label="Create Building"
-            android:parentActivityName=".SecondActivity" >
+            android:parentActivityName=".MainMenuActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alex.helloworld.SecondActivity" />
+                android:value="com.example.alex.assignment5.MainMenuActivity" />
         </activity>
+
         <activity
-            android:name=".FourthActivity"
+            android:name=".ActionMenuActivity"
             android:label="Action Menu"
-            android:parentActivityName=".ThirdActivity" >
+            android:parentActivityName=".MainMenuActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alex.helloworld.ThirdActivity" />
+                android:value="com.example.alex.assignment5.MainMenuActivity" />
         </activity>
+
         <activity
-            android:name=".FifthActivity"
+            android:name=".PreferencesActivity"
             android:label="Preferences"
-            android:parentActivityName=".SecondActivity" >
+            android:parentActivityName=".MainMenuActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alex.helloworld.FourthActivity" />
+                android:value="com.example.alex.assignment5.MainMenuActivity" />
         </activity>
+
         <activity
-            android:name=".SixthActivity"
+            android:name=".ListUsersActivity"
             android:label="Users"
-            android:parentActivityName=".FourthActivity" >
+            android:parentActivityName=".ActionMenuActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alex.helloworld.FifthActivity" />
+                android:value="com.example.alex.assignment5.ActionMenuActivity" />
         </activity>
+
         <activity
-            android:name=".SeventhActivity"
+            android:name=".ListSensorsActivity"
             android:label="Sensors"
-            android:parentActivityName=".FourthActivity" >
+            android:parentActivityName=".ActionMenuActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alex.helloworld.SixthActivity" />
+                android:value="com.example.alex.assignment5.ActionMenuActivity" />
         </activity>
+
         <activity
-            android:name=".EigthActivity"
+            android:name=".ListRobotsActivity"
             android:label="Robots"
-            android:parentActivityName=".FourthActivity" >
+            android:parentActivityName=".ActionMenuActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.alex.helloworld.SeventhActivity" />
+                android:value="com.example.alex.assignment5.ActionMenuActivity" />
         </activity>
     </application>
 

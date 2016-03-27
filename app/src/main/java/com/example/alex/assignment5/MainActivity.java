@@ -13,7 +13,6 @@ Password: abc
  */
 package com.example.alex.assignment5;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -92,7 +91,7 @@ public class MainActivity extends AppCompatActivity
     public void login(View view)
     {
         // Uses an Intent to transmit user credentials between activities
-        Intent intent = new Intent(this, SecondActivity.class);
+        Intent intent = new Intent(this, MainMenuActivity.class);
 
         // Retrieves the username string
         EditText nameField = (EditText) findViewById(R.id.nameField);
