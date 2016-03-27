@@ -60,9 +60,18 @@ public class RegisterActivity extends AppCompatActivity
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(),
-                            "Error: invalid username or password",
-                            Toast.LENGTH_LONG).show();
+                    if ((!userName.isEmpty()) && (!passWord.equals(passWord2)))
+                    {
+                        Toast.makeText(getApplicationContext(),
+                                "Error: passwords fields must match",
+                                Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(),
+                                "Error: invalid username or password",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
