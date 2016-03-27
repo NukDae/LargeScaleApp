@@ -8,6 +8,7 @@
         android:label="@string/LargeScaleApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:label="Log In" >
@@ -16,6 +17,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".RegisterActivity"
+            android:label="Sign Up"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.alex.assignment5.MainActivity" />
         </activity>
 
         <activity

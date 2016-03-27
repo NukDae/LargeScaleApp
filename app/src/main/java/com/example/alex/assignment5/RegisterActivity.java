@@ -2,17 +2,14 @@
 // Team 2
 // ECE 4574
 /*
-MainActivity.java
+RegisterActivity.java
 
-Client-side implementation of a simple user login interface.
-Upon a successful login, transitions to the second activity.
-
-Username: john
-Password: abc
-
+Users can register new accounts in this activity.
+Required information: username and password.
  */
 package com.example.alex.assignment5;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -21,28 +18,30 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import android.content.Intent;
 
-public class MainActivity extends AppCompatActivity
+/**
+ * Created by Alex on 3/27/2016.
+ */
+public class RegisterActivity extends AppCompatActivity
 {
     // The string value that is transmitted by the Intent upon user verification
-    public final static String USER_INFO = "com.example.alex.MESSAGE";
+    public final static String NEW_USER_INFO = "com.example.alex.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_register);
 
-        // The login button implements an OnClickListener to verify user credentials
-        ImageButton loginButton = (ImageButton)findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(new View.OnClickListener()
+        // The sign-up button implements an OnClickListener to verify user credentials
+        ImageButton signupButton = (ImageButton)findViewById(R.id.registerButton);
+        signupButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 // Retrieves the username string
-                EditText nameField = (EditText) findViewById(R.id.nameField);
+                EditText nameField = (EditText) findViewById(R.id.newNameField);
                 String userName = nameField.getText().toString();
                 userName = userName.trim();
 
@@ -50,20 +49,16 @@ public class MainActivity extends AppCompatActivity
                 EditText passwordField = (EditText) findViewById(R.id.newPasswordField);
                 String passWord = passwordField.getText().toString();
 
-                // Login requires a valid username and password combination
-                // For client-side testing, username is john and password is abc
-                if ((!userName.isEmpty()) && (!passWord.isEmpty()))
+                // Retrieves the repeated password string
+                EditText passwordField2 = (EditText) findViewById(R.id.repeatPasswordField);
+                String passWord2 = passwordField2.getText().toString();
+
+                // Registration requires a valid username and matching password fields
+                if((!userName.isEmpty()) && (!passWord.isEmpty()) && (!passWord2.isEmpty()) && (passWord.equals(passWord2)))
                 {
-                    if ((userName.equals("john")) && (passWord.equals("abc")))
-                    {
-                        login(v);
-                    } else
-                    {
-                        Toast.makeText(getApplicationContext(),
-                                "Error: invalid username or password",
-                                Toast.LENGTH_LONG).show();
-                    }
-                } else
+                    register(v);
+                }
+                else
                 {
                     Toast.makeText(getApplicationContext(),
                             "Error: invalid username or password",
@@ -72,18 +67,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        // The signup button implements an OnClickListener to register a new user
-        ImageButton signupButton = (ImageButton)findViewById(R.id.registerButton);
-        signupButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                register(v);
-            }
-        });
-
-        // The exit button implements an OnClickListener to exit the program
+        // The exit button implements an OnClickListener to exit the screen
         ImageButton exitButton = (ImageButton)findViewById(R.id.cancelButton);
         exitButton.setOnClickListener(new View.OnClickListener()
         {
@@ -91,41 +75,37 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 finish();
-                // System.exit(0);
             }
         });
     }
 
     // This function is called when the user inputs a valid username and password combination
-    public void login(View view)
+    public void register(View view)
     {
         // Uses an Intent to transmit user credentials between activities
         Intent intent = new Intent(this, MainMenuActivity.class);
 
         // Retrieves the username string
-        EditText nameField = (EditText) findViewById(R.id.nameField);
+        EditText nameField = (EditText) findViewById(R.id.newNameField);
         String userName = nameField.getText().toString();
         userName = userName.trim();
 
         // Retrieves the password string
         EditText passwordField = (EditText) findViewById(R.id.newPasswordField);
+        EditText passwordField2 = (EditText) findViewById(R.id.repeatPasswordField);
         String passWord = passwordField.getText().toString();
 
         // Concatenates the username and password into a single string for the Intent
         String userInfo = (userName + " " + passWord);
-        intent.putExtra(USER_INFO, userInfo);
+        intent.putExtra(NEW_USER_INFO, userInfo);
         startActivity(intent);
 
         // Reset username and password fields
         nameField.setText("");
         passwordField.setText("");
-    }
+        passwordField2.setText("");
 
-    // This function is called when the user clicks the register button
-    public void register(View view)
-    {
-        Intent intent = new Intent(this, RegisterActivity.class);
-        startActivity(intent);
+        finish();
     }
 
     @Override
