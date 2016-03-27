@@ -77,7 +77,7 @@ public class RegisterActivity extends AppCompatActivity
         });
 
         // The exit button implements an OnClickListener to exit the screen
-        ImageButton exitButton = (ImageButton)findViewById(R.id.cancelButton);
+        ImageButton exitButton = (ImageButton)findViewById(R.id.button_create);
         exitButton.setOnClickListener(new View.OnClickListener()
         {
             @Override

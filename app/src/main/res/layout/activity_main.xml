@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/loginButton"
-        android:src="@drawable/login_b"
+        android:src="@drawable/login2_b"
         android:background="@null"
         android:layout_above="@+id/registerButton"
         android:layout_alignLeft="@+id/registerButton"
@@ -41,8 +41,18 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/cancelButton"
-        android:src="@drawable/exit_b"
+        android:id="@+id/registerButton"
+        android:src="@drawable/register2_b"
+        android:background="@null"
+        android:layout_above="@+id/button_create"
+        android:layout_alignLeft="@+id/button_create"
+        android:layout_alignStart="@+id/button_create"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_create"
+        android:src="@drawable/exit2_b"
         android:background="@null"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>
@@ -63,15 +73,5 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textSize="25dp" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/registerButton"
-        android:src="@drawable/register_b"
-        android:background="@null"
-        android:layout_above="@+id/cancelButton"
-        android:layout_alignLeft="@+id/cancelButton"
-        android:layout_alignStart="@+id/cancelButton"/>
 
 </RelativeLayout>

@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
         });
 
         // The exit button implements an OnClickListener to exit the program
-        ImageButton exitButton = (ImageButton)findViewById(R.id.cancelButton);
+        ImageButton exitButton = (ImageButton)findViewById(R.id.button_create);
         exitButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
