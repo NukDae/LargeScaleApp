@@ -54,19 +54,17 @@ public class RegisterActivity extends AppCompatActivity
                 String passWord2 = passwordField2.getText().toString();
 
                 // Registration requires a valid username and matching password fields
-                if((!userName.isEmpty()) && (!passWord.isEmpty()) && (!passWord2.isEmpty()) && (passWord.equals(passWord2)))
+                if ((!userName.isEmpty()) && (!passWord.isEmpty()) && (!passWord2.isEmpty()) && (passWord.equals(passWord2)))
                 {
                     register(v);
-                }
-                else
+                } else
                 {
                     if ((!userName.isEmpty()) && (!passWord.equals(passWord2)))
                     {
                         Toast.makeText(getApplicationContext(),
                                 "Error: passwords fields must match",
                                 Toast.LENGTH_LONG).show();
-                    }
-                    else
+                    } else
                     {
                         Toast.makeText(getApplicationContext(),
                                 "Error: invalid username or password",
@@ -84,6 +82,19 @@ public class RegisterActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 finish();
+            }
+        });
+
+        // The alert button implements an OnClickListener to alert the system
+        ImageButton alertButton = (ImageButton)findViewById(R.id.alertButton);
+        alertButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(getApplicationContext(),
+                        "System is now in Alert status",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }

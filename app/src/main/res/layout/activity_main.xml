@@ -34,9 +34,9 @@
         android:id="@+id/loginButton"
         android:src="@drawable/login2_b"
         android:background="@null"
-        android:layout_above="@+id/registerButton"
-        android:layout_alignLeft="@+id/registerButton"
-        android:layout_alignStart="@+id/registerButton"/>
+        android:layout_below="@+id/newPasswordField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -44,9 +44,18 @@
         android:id="@+id/registerButton"
         android:src="@drawable/register2_b"
         android:background="@null"
-        android:layout_above="@+id/button_create"
-        android:layout_alignLeft="@+id/button_create"
-        android:layout_alignStart="@+id/button_create"/>
+        android:layout_below="@+id/loginButton"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/alertButton"
+        android:src="@drawable/alert_b"
+        android:background="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -54,8 +63,9 @@
         android:id="@+id/button_create"
         android:src="@drawable/exit2_b"
         android:background="@null"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@+id/registerButton"
+        android:layout_alignLeft="@+id/registerButton"
+        android:layout_alignStart="@+id/registerButton"/>
 
     <ImageView
         android:layout_width="wrap_content"

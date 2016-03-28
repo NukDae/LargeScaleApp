@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.Toast;
 
 /**
  * Created by Alex on 3/27/2016.
@@ -88,6 +89,19 @@ public class MainMenuActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 finish();
+            }
+        });
+
+        // The alert button implements an OnClickListener to alert the system
+        ImageButton alertButton = (ImageButton)findViewById(R.id.alertButton);
+        alertButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(getApplicationContext(),
+                        "System is now in Alert status",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }

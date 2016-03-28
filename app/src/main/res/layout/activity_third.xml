@@ -7,15 +7,6 @@
                 tools:context="com.example.alex.assignment5.ThirdActivity" >
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create"
-        android:id="@+id/button_create"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="97dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,23 +18,36 @@
         android:layout_marginTop="53dp"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="113dp"
         android:layout_height="wrap_content"
         android:id="@+id/layoutNameField"
         android:hint="Enter Name"
-        android:layout_above="@+id/button_create"
         android:layout_centerHorizontal="true"
         android:text=""
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:layout_marginTop="280dp"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_create"
+        android:src="@drawable/create_b"
+        android:background="@null"
+        android:layout_below="@+id/chooseLayoutTitle"
+        android:layout_alignRight="@+id/layoutNameField"
+        android:layout_alignEnd="@+id/layoutNameField"
+        android:layout_marginTop="280dp"/>
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/radioGroup"
         android:layout_below="@+id/chooseLayoutTitle"
-        android:layout_alignLeft="@+id/layoutNameField"
-        android:layout_alignStart="@+id/layoutNameField"
-        android:layout_marginTop="57dp">
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="57dp"
+        android:layout_alignLeft="@+id/chooseLayoutTitle"
+        android:layout_marginLeft="20dp">
 
         <RadioButton
             android:layout_width="wrap_content"

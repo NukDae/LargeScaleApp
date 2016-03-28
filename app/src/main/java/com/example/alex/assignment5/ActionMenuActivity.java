@@ -18,6 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 /**
  * Created by Alex on 3/27/2016.
@@ -32,9 +34,9 @@ public class ActionMenuActivity extends AppCompatActivity
 
         Intent intent = getIntent();
 
-        // Implements an OnClickListener for button_back
-        Button button_back = (Button) findViewById(R.id.button_back);
-        button_back.setOnClickListener(new View.OnClickListener()
+        // Implements an OnClickListener to exit the preferences activity
+        ImageButton exitButton = (ImageButton)findViewById(R.id.button_return);
+        exitButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -43,7 +45,8 @@ public class ActionMenuActivity extends AppCompatActivity
             }
         });
 
-        Button usersButton = (Button) findViewById(R.id.toUsers);
+        // Implements an OnClickListener to transition to the ListUsersActivity
+        ImageButton usersButton = (ImageButton)findViewById(R.id.toUsers);
         usersButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -53,7 +56,8 @@ public class ActionMenuActivity extends AppCompatActivity
             }
         });
 
-        Button sensorsButton = (Button) findViewById(R.id.toSensors);
+        // Implements an OnClickListener to transition to the ListSensorsActivity
+        ImageButton sensorsButton = (ImageButton)findViewById(R.id.toSensors);
         sensorsButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -63,13 +67,27 @@ public class ActionMenuActivity extends AppCompatActivity
             }
         });
 
-        Button robotsButton = (Button) findViewById(R.id.toRobots);
+        // Implements an OnClickListener to transition to the ListRobotsActivity
+        ImageButton robotsButton = (ImageButton)findViewById(R.id.toRobots);
         robotsButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 goToRobots(v);
+            }
+        });
+
+        // The alert button implements an OnClickListener to alert the system
+        ImageButton alertButton = (ImageButton)findViewById(R.id.alertButton);
+        alertButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(getApplicationContext(),
+                        "System is now in Alert status",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }

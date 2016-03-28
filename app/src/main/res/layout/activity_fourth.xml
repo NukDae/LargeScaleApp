@@ -7,45 +7,64 @@
     tools:context="com.example.alex.assignment5.FourthActivity" >
 
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Perform Activity"
-        android:id="@+id/perfActivity"
-        android:layout_above="@+id/toSensors"
+        android:id="@+id/button_return"
+        android:src="@drawable/return2_b"
+        android:background="@null"
+        android:layout_marginBottom="70dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go To Sensors"
+        android:id="@+id/toUsers"
+        android:src="@drawable/to_users2_b"
+        android:background="@null"
+        android:layout_above="@+id/toSensors"
+        android:layout_alignLeft="@+id/toSensors"
+        android:layout_alignStart="@+id/toSensors"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/perfAction"
+        android:src="@drawable/perform_action2_b"
+        android:background="@null"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/toUsers"
+        android:layout_alignStart="@+id/toUsers"
+        android:layout_marginTop="50dp"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/toSensors"
+        android:src="@drawable/to_sensors2_b"
+        android:background="@null"
         android:layout_above="@+id/toRobots"
         android:layout_centerHorizontal="true"/>
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go To Robots"
         android:id="@+id/toRobots"
+        android:src="@drawable/to_robots2_b"
+        android:background="@null"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/alertButton"
+        android:layout_alignStart="@+id/alertButton"/>
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go To Users"
-        android:id="@+id/toUsers"
-        android:layout_above="@+id/perfActivity"
-        android:layout_centerHorizontal="true"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go Back"
-        android:id="@+id/button_back"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/alertButton"
+        android:src="@drawable/alert_b"
+        android:background="@null"
+        android:layout_above="@+id/button_return"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="55dp"/>
+        android:layout_marginBottom="40dp"/>
 
 </RelativeLayout>

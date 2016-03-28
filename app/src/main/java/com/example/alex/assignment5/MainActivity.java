@@ -94,6 +94,19 @@ public class MainActivity extends AppCompatActivity
                 // System.exit(0);
             }
         });
+
+        // The alert button implements an OnClickListener to alert the system
+        ImageButton alertButton = (ImageButton)findViewById(R.id.alertButton);
+        alertButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(getApplicationContext(),
+                        "System is now in Alert status",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     // This function is called when the user inputs a valid username and password combination
