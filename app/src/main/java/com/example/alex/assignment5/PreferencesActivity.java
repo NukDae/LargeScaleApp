@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 /**
  * Created by Alex on 3/27/2016.
@@ -24,9 +25,9 @@ public class PreferencesActivity extends AppCompatActivity
 
         Intent intent = getIntent();
 
-        // Implements an OnClickListener for button_back
-        Button button_back = (Button) findViewById(R.id.button6);
-        button_back.setOnClickListener(new View.OnClickListener()
+        // Implements an OnClickListener to exit the preferences activity
+        ImageButton exitButton = (ImageButton)findViewById(R.id.button_return);
+        exitButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)

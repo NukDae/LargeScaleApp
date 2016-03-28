@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -48,12 +49,13 @@ public class CreateBuildingActivity extends AppCompatActivity
             }
         });
 
+
         // Implements an OnClickListener for button_create
-        Button button_create = (Button) findViewById(R.id.button_create);
-        button_create.setOnClickListener(new View.OnClickListener()
+        ImageButton createButton = (ImageButton)findViewById(R.id.button_create);
+        createButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick (View v)
+            public void onClick(View v)
             {
                 finish();
             }

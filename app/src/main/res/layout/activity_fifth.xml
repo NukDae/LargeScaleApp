@@ -50,12 +50,15 @@
         android:layout_centerHorizontal="true"
         android:checked="false"/>
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go Back"
-        android:id="@+id/button6"
+        android:id="@+id/button_return"
+        android:src="@drawable/return_b"
+        android:background="@null"
+        android:layout_marginTop="57dp"
         android:layout_below="@+id/opt4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"/>
+        android:layout_alignLeft="@+id/usersTitle"
+        android:layout_alignStart="@+id/usersTitle"/>
+
 </RelativeLayout>

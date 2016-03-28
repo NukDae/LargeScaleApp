@@ -19,8 +19,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.Toast;
 
 /**
  * Created by Alex on 3/27/2016.
@@ -45,9 +47,9 @@ public class MainMenuActivity extends AppCompatActivity
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         buildings.setAdapter(adapter);
 
-        // Implements an OnClickListener for button_a
-        Button button_create = (Button) findViewById(R.id.button_create);
-        button_create.setOnClickListener(new View.OnClickListener()
+        // Implements an OnClickListener to transition to the CreateBuildingActivity
+        ImageButton createBuildingButton = (ImageButton)findViewById(R.id.button_create);
+        createBuildingButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -56,8 +58,9 @@ public class MainMenuActivity extends AppCompatActivity
             }
         });
 
-        Button button_go = (Button) findViewById(R.id.button_go);
-        button_go.setOnClickListener(new View.OnClickListener()
+        // Implements an OnClickListener to transition to the ActionMenuActivity
+        ImageButton goToBuildingButton = (ImageButton)findViewById(R.id.button_go);
+        goToBuildingButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -67,8 +70,9 @@ public class MainMenuActivity extends AppCompatActivity
             }
         });
 
-        Button button_pref = (Button) findViewById(R.id.button_pref);
-        button_pref.setOnClickListener(new View.OnClickListener()
+        // Implements an OnClickListener to transition to the PreferencesActivity
+        ImageButton prefButton = (ImageButton)findViewById(R.id.button_pref);
+        prefButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -77,14 +81,27 @@ public class MainMenuActivity extends AppCompatActivity
             }
         });
 
-        // Implements an OnClickListener for the logout button
-        Button logOut = (Button) findViewById(R.id.logoutButton);
-        logOut.setOnClickListener(new View.OnClickListener()
+        // Implements an OnClickListener to exit the main menu
+        ImageButton exitButton = (ImageButton)findViewById(R.id.button_logout);
+        exitButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 finish();
+            }
+        });
+
+        // The alert button implements an OnClickListener to alert the system
+        ImageButton alertButton = (ImageButton)findViewById(R.id.alertButton);
+        alertButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(getApplicationContext(),
+                        "System is now in Alert status",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
