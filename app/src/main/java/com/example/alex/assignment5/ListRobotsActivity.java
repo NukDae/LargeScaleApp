@@ -1,7 +1,5 @@
 package com.example.alex.assignment5;
 
-import android.app.ActionBar;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,10 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.LinearLayout;
-import io.swagger.client.ApiClient;
 
 /**
  * Created by Alex on 3/27/2016.
@@ -37,23 +31,6 @@ public class ListRobotsActivity extends AppCompatActivity
                 finish();
             }
         });
-
-        ApiClient client = new ApiClient();
-
-        //LinearLayout layout = (LinearLayout) findViewById(R.layout.activity_eigth);
-        RadioButton robotListItem = new RadioButton(getApplicationContext());
-        robotListItem.setText("Button ");
-        //layout.addView(robotListItem);
-
-
-        //View layout = (View) findViewById(R.layout.activity_eigth);
-        for(int i=0; i < 5; i++)
-        {
-            //layout.addView(robotListItem);
-        }
-
-
-
     }
 
     @Override
