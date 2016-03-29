@@ -7,11 +7,17 @@
               tools:context="org.fitex.homework2.fragments.Progress"
               android:background="@drawable/gradient">
 
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/addEntry"
-        android:text="Add New Entry"/>
+        android:text="Notifications"
+        android:autoText="false"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:typeface="normal"
+        android:textSize="25dp" />
 
     <ListView
         android:layout_width="match_parent"

@@ -45,31 +45,17 @@ public class RegisterActivity extends AppCompatActivity
                 String userName = nameField.getText().toString();
                 userName = userName.trim();
 
-                // Retrieves the password string
-                EditText passwordField = (EditText) findViewById(R.id.newPasswordField);
-                String passWord = passwordField.getText().toString();
-
-                // Retrieves the repeated password string
-                EditText passwordField2 = (EditText) findViewById(R.id.repeatPasswordField);
-                String passWord2 = passwordField2.getText().toString();
-
                 // Registration requires a valid username and matching password fields
-                if ((!userName.isEmpty()) && (!passWord.isEmpty()) && (!passWord2.isEmpty()) && (passWord.equals(passWord2)))
+                if (!userName.isEmpty())
                 {
                     register(v);
                 } else
                 {
-                    if ((!userName.isEmpty()) && (!passWord.equals(passWord2)))
-                    {
+
                         Toast.makeText(getApplicationContext(),
-                                "Error: passwords fields must match",
+                                "Error: You must enter a username",
                                 Toast.LENGTH_LONG).show();
-                    } else
-                    {
-                        Toast.makeText(getApplicationContext(),
-                                "Error: invalid username or password",
-                                Toast.LENGTH_LONG).show();
-                    }
+
                 }
             }
         });
@@ -82,19 +68,6 @@ public class RegisterActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 finish();
-            }
-        });
-
-        // The alert button implements an OnClickListener to alert the system
-        ImageButton alertButton = (ImageButton)findViewById(R.id.alertButton);
-        alertButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Toast.makeText(getApplicationContext(),
-                        "System is now in Alert status",
-                        Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -110,20 +83,10 @@ public class RegisterActivity extends AppCompatActivity
         String userName = nameField.getText().toString();
         userName = userName.trim();
 
-        // Retrieves the password string
-        EditText passwordField = (EditText) findViewById(R.id.newPasswordField);
-        EditText passwordField2 = (EditText) findViewById(R.id.repeatPasswordField);
-        String passWord = passwordField.getText().toString();
-
         // Concatenates the username and password into a single string for the Intent
-        String userInfo = (userName + " " + passWord);
+        String userInfo = (userName);
         intent.putExtra(NEW_USER_INFO, userInfo);
         startActivity(intent);
-
-        // Reset username and password fields
-        nameField.setText("");
-        passwordField.setText("");
-        passwordField2.setText("");
 
         finish();
     }

@@ -12,19 +12,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/nameField"
         android:hint="Enter Name"
-        android:layout_above="@+id/newPasswordField"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:singleLine="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/newPasswordField"
-        android:hint="Password"
-        android:layout_centerVertical="true"
+        android:singleLine="true"
+        android:layout_above="@+id/loginButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -34,9 +23,9 @@
         android:id="@+id/loginButton"
         android:src="@drawable/login2_b"
         android:background="@null"
-        android:layout_below="@+id/newPasswordField"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"/>
+        android:layout_marginTop="39dp"
+        android:layout_centerVertical="true" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -46,16 +35,6 @@
         android:background="@null"
         android:layout_below="@+id/loginButton"
         android:layout_centerHorizontal="true"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/alertButton"
-        android:src="@drawable/alert_b"
-        android:background="@null"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"/>
 
     <ImageButton
         android:layout_width="wrap_content"

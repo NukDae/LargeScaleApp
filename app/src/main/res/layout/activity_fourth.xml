@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/perfAction"
-        android:src="@drawable/perform_action2_b"
+        android:src="@drawable/notifications_b"
         android:background="@null"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/toUsers"
@@ -55,17 +55,6 @@
         android:src="@drawable/to_robots2_b"
         android:background="@null"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/alertButton"
-        android:layout_alignStart="@+id/alertButton"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/alertButton"
-        android:src="@drawable/alert_b"
-        android:background="@null"
-        android:layout_above="@+id/button_return"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"/>
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

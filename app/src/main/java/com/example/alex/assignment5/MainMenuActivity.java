@@ -75,16 +75,6 @@ public class MainMenuActivity extends AppCompatActivity
             }
         });
 
-        // Implements an OnClickListener to transition to the PreferencesActivity
-        ImageButton prefButton = (ImageButton)findViewById(R.id.button_pref);
-        prefButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                goToPreferences(v);
-            }
-        });
 
         // Implements an OnClickListener to exit the main menu
         ImageButton exitButton = (ImageButton)findViewById(R.id.button_logout);
@@ -97,18 +87,6 @@ public class MainMenuActivity extends AppCompatActivity
             }
         });
 
-        // The alert button implements an OnClickListener to alert the system
-        ImageButton alertButton = (ImageButton)findViewById(R.id.alertButton);
-        alertButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Toast.makeText(getApplicationContext(),
-                        "System is now in Alert status",
-                        Toast.LENGTH_LONG).show();
-            }
-        });
     }
 
     public void goToBuilding(View v)
@@ -122,13 +100,6 @@ public class MainMenuActivity extends AppCompatActivity
         Intent intent = new Intent(this, CreateBuildingActivity.class);
         startActivity(intent);
     }
-
-    public void goToPreferences(View view)
-    {
-        Intent intent = new Intent(this, PreferencesActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {

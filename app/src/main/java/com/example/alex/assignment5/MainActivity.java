@@ -51,26 +51,26 @@ public class MainActivity extends AppCompatActivity
                 useAPI = false;
 
                 // Retrieves the password string
-                EditText passwordField = (EditText) findViewById(R.id.newPasswordField);
-                String passWord = passwordField.getText().toString();
+                /*EditText passwordField = (EditText) findViewById(R.id.newPasswordField);
+                String passWord = passwordField.getText().toString();*/
 
                 // Login requires a valid username and password combination
                 // For client-side testing, username is john and password is abc
-                if ((!userName.isEmpty()) && (!passWord.isEmpty()))
+                if ((!userName.isEmpty()) /*&& (!passWord.isEmpty())*/)
                 {
-                    if ((userName.equals("john")) && (passWord.equals("abc")))
+                    if ((userName.equals("john")) /*&& (passWord.equals("abc"))*/)
                     {
                         login(v);
                     } else
                     {
                         Toast.makeText(getApplicationContext(),
-                                "Error: invalid username or password",
+                                "Error: invalid username",
                                 Toast.LENGTH_LONG).show();
                     }
                 } else
                 {
                     Toast.makeText(getApplicationContext(),
-                            "Error: invalid username or password",
+                            "Error: invalid username",
                             Toast.LENGTH_LONG).show();
                 }
             }
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity
                 // System.exit(0);
             }
         });
-
+/*
         // The alert button implements an OnClickListener to alert the system
         ImageButton alertButton = (ImageButton)findViewById(R.id.alertButton);
         alertButton.setOnClickListener(new View.OnClickListener()
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity
                         "System is now in Alert status",
                         Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
     }
 
     // This function is called when the user inputs a valid username and password combination
@@ -125,17 +125,17 @@ public class MainActivity extends AppCompatActivity
         userName = userName.trim();
 
         // Retrieves the password string
-        EditText passwordField = (EditText) findViewById(R.id.newPasswordField);
-        String passWord = passwordField.getText().toString();
+       // EditText passwordField = (EditText) findViewById(R.id.newPasswordField);
+//        String passWord = passwordField.getText().toString();
 
         // Concatenates the username and password into a single string for the Intent
-        String userInfo = (userName + " " + passWord);
+        String userInfo = (userName /*+ " " + passWord*/);
         intent.putExtra(USER_INFO, userInfo);
         startActivity(intent);
 
         // Reset username and password fields
         nameField.setText("");
-        passwordField.setText("");
+        //passwordField.setText("");
     }
 
     // This function is called when the user clicks the register button

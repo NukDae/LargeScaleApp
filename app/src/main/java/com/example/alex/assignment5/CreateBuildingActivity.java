@@ -26,8 +26,6 @@ import android.widget.RadioGroup;
  */
 public class CreateBuildingActivity extends AppCompatActivity
 {
-    // Creates a radioGroup for the layout options
-    private RadioGroup radioGroup;
     boolean useAPI;
 
     @Override
@@ -40,19 +38,6 @@ public class CreateBuildingActivity extends AppCompatActivity
 
         useAPI = false;
 
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        radioGroup.clearCheck();
-
-        // Implements an OnCheckedChangeListener for the radio buttons
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId)
-            {
-                RadioButton rb = (RadioButton) group.findViewById(checkedId);
-            }
-        });
-
 
         // Implements an OnClickListener for button_create
         ImageButton createButton = (ImageButton)findViewById(R.id.button_create);
@@ -62,11 +47,7 @@ public class CreateBuildingActivity extends AppCompatActivity
             public void onClick(View v)
             {
 
-
-                    int layout = radioGroup.getCheckedRadioButtonId();
-                    RadioButton chosenLayout = (RadioButton) findViewById(layout);
-
-                    EditText name = (EditText) findViewById(R.id.layoutNameField);
+                EditText name = (EditText) findViewById(R.id.layoutNameField);
 
                 finish();
             }

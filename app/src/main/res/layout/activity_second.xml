@@ -42,31 +42,10 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_pref"
-        android:src="@drawable/preferences_b"
-        android:background="@null"
-        android:layout_below="@+id/button_go"
-        android:layout_alignLeft="@+id/button_logout"
-        android:layout_alignStart="@+id/button_logout"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/button_logout"
         android:src="@drawable/logout_b"
         android:background="@null"
-        android:layout_below="@+id/button_pref"
-        android:layout_centerHorizontal="true"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/alertButton"
-        android:src="@drawable/alert_b"
-        android:background="@null"
-        android:layout_below="@+id/button_logout"
-        android:layout_alignLeft="@+id/button_logout"
-        android:layout_alignStart="@+id/button_logout"
-        android:layout_marginTop="46dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button_go" />
 
 </RelativeLayout>
