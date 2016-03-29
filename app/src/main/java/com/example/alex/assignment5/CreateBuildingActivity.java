@@ -16,9 +16,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.api.ByIDApi;
+import io.swagger.client.model.Building;
 
 /**
  * Created by Alex on 3/27/2016.
@@ -27,6 +33,7 @@ public class CreateBuildingActivity extends AppCompatActivity
 {
     // Creates a radioGroup for the layout options
     private RadioGroup radioGroup;
+    boolean useAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,6 +42,8 @@ public class CreateBuildingActivity extends AppCompatActivity
         setContentView(R.layout.activity_third);
 
         Intent intent = getIntent();
+
+        useAPI = false;
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         radioGroup.clearCheck();
@@ -57,6 +66,26 @@ public class CreateBuildingActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                if(useAPI) {
+
+                    ApiClient client = new ApiClient();
+                    ByIDApi byID = new ByIDApi();
+                    Building newBuild = new Building();
+
+                    int layout = radioGroup.getCheckedRadioButtonId();
+                    RadioButton chosenLayout = (RadioButton) findViewById(layout);
+
+                    EditText name = (EditText) findViewById(R.id.layoutNameField);
+
+                    try {
+
+                        byID.buildingsBuildingIDPut(name.getText().toString(), newBuild);
+
+                    } catch(ApiException e) {
+
+                        // exception
+                    }
+                }
                 finish();
             }
         });

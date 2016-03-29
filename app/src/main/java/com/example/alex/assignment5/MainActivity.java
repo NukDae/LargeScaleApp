@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity
     // The string value that is transmitted by the Intent upon user verification
     public final static String USER_INFO = "com.example.alex.MESSAGE";
 
+    boolean useAPI;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity
                 EditText nameField = (EditText) findViewById(R.id.nameField);
                 String userName = nameField.getText().toString();
                 userName = userName.trim();
+
+                useAPI = false;
 
                 // Retrieves the password string
                 EditText passwordField = (EditText) findViewById(R.id.newPasswordField);

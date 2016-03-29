@@ -12,6 +12,7 @@ package com.example.alex.assignment5;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,12 +25,21 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
+import java.util.List;
+
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.api.ByTypeApi;
+import io.swagger.client.model.Building;
+import io.swagger.client.model.Sensor;
+
 /**
  * Created by Alex on 3/27/2016.
  */
 public class MainMenuActivity extends AppCompatActivity
 {
     String buildingName;
+    boolean useAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,11 +51,38 @@ public class MainMenuActivity extends AppCompatActivity
         Intent intent = getIntent();
         // String message = intent.getStringExtra(MainActivity.USER_INFO);
 
+
         final Spinner buildings = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.buildings, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         buildings.setAdapter(adapter);
+
+        useAPI = false;
+
+        if(useAPI) {
+
+            ApiClient client = new ApiClient();
+            ByTypeApi byType = new ByTypeApi();
+
+            try {
+
+                List<Building> buildingList = byType.buildingsGet();
+                adapter.clear();
+
+                int i = buildingList.size();
+                while(!buildingList.isEmpty()) {
+
+                    i--;
+                    adapter.add(buildingList.get(i).getId());
+                }
+
+            } catch(ApiException e) {
+
+                // exception
+            }
+
+        }
 
         // Implements an OnClickListener to transition to the CreateBuildingActivity
         ImageButton createBuildingButton = (ImageButton)findViewById(R.id.button_create);

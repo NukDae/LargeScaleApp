@@ -1,18 +1,34 @@
 package com.example.alex.assignment5;
 
 import android.content.Intent;
+import android.hardware.Sensor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
+
+import java.util.List;
+
+import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.api.ByIDApi;
+import io.swagger.client.api.ByTypeApi;
+import io.swagger.client.model.Robot;
 
 /**
  * Created by Alex on 3/27/2016.
  */
 public class ListSensorsActivity extends AppCompatActivity
 {
+    boolean useAPI;
+    RadioButton first;
+    RadioButton second;
+    RadioButton third;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -20,15 +36,104 @@ public class ListSensorsActivity extends AppCompatActivity
         setContentView(R.layout.activity_seventh);
 
         Intent intent = getIntent();
+        useAPI = false;
+
+        first = (RadioButton) findViewById(R.id.checkBox_s1);
+        second = (RadioButton) findViewById(R.id.checkBox_s2);
+        third = (RadioButton) findViewById(R.id.checkBox_s3);
+
+        if(useAPI) {
+
+            ApiClient client = new ApiClient();
+            ByTypeApi byType = new ByTypeApi();
+
+            try {
+
+                List<io.swagger.client.model.Sensor> sensorList = byType.sensorsGet();
+                first.setText(sensorList.get(0).getId().toString());
+                second.setText(sensorList.get(1).getId().toString());
+                third.setText(sensorList.get(2).getId().toString());
+
+            } catch(ApiException e) {
+
+                // exception
+            }
+
+        }
 
         // Implements an OnClickListener for button_back
-        Button button_back = (Button) findViewById(R.id.button8);
+        Button button_back = (Button) findViewById(R.id.sensor_back);
+        Button button_new = (Button) findViewById(R.id.new_sensor);
+        Button button_edit = (Button) findViewById(R.id.edit_sensor);
+        Button button_delete = (Button) findViewById(R.id.delete_sensor);
+
         button_back.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 finish();
+            }
+        });
+
+        button_new.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(useAPI) {
+
+                    ApiClient client = new ApiClient();
+                    ByIDApi byID = new ByIDApi();
+                    io.swagger.client.model.Sensor newSensor = new io.swagger.client.model.Sensor();
+
+                    String str = "";
+
+                    try {
+
+                        byID.sensorsSensorIDPut(str, newSensor);
+
+                    } catch(ApiException e) {
+
+                        // exception
+                    }
+                }
+            }
+        });
+
+        button_edit.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(useAPI) {
+
+                    ApiClient client = new ApiClient();
+                    ByIDApi byID = new ByIDApi();
+                    io.swagger.client.model.Sensor newSensor = new io.swagger.client.model.Sensor();
+                }
+            }
+        });
+
+        button_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (useAPI) {
+
+                    ApiClient client = new ApiClient();
+                    ByIDApi byID = new ByIDApi();
+
+                    String str = first.getText().toString();
+
+                    try {
+
+                        byID.sensorsSensorIDDelete(str);
+
+                    } catch(ApiException e) {
+
+                        // exception
+                    }
+                }
             }
         });
     }

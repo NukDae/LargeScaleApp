@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
@@ -18,7 +18,7 @@
             android:layout_weight="0.35">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Local Robots"
@@ -32,21 +32,18 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New CheckBox"
                 android:id="@+id/checkBox3"
                 android:checked="false" />
 
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New CheckBox"
                 android:id="@+id/checkBox4"
                 android:checked="false" />
 
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New CheckBox"
                 android:id="@+id/checkBox5"
                 android:checked="false" />
 
@@ -62,21 +59,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Delete"
-                android:id="@+id/button2"
+                android:id="@+id/delete_robot"
                 android:layout_weight="0.27" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edit"
-                android:id="@+id/button3"
+                android:id="@+id/edit_robot"
                 android:layout_weight="0.27" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New"
-                android:id="@+id/button"
+                android:id="@+id/new_robot"
                 android:layout_weight="0.27" />
         </LinearLayout>
 
@@ -86,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
-        android:id="@+id/button9"
+        android:id="@+id/robot_back"
         android:layout_weight="0.23"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"

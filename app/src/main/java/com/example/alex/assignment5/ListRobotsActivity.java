@@ -9,16 +9,30 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.LinearLayout;
+
+import java.util.List;
+
 import io.swagger.client.ApiClient;
+import io.swagger.client.ApiException;
+import io.swagger.client.api.ByIDApi;
+import io.swagger.client.api.ByTypeApi;
+import io.swagger.client.model.Robot;
+import io.swagger.client.model.Sensor;
 
 /**
  * Created by Alex on 3/27/2016.
  */
 public class ListRobotsActivity extends AppCompatActivity
 {
+    boolean useAPI;
+    RadioButton first;
+    RadioButton second;
+    RadioButton third;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -27,8 +41,39 @@ public class ListRobotsActivity extends AppCompatActivity
 
         Intent intent = getIntent();
 
+        useAPI = false;
+
+        first = (RadioButton) findViewById(R.id.checkBox_s1);
+        second = (RadioButton) findViewById(R.id.checkBox_s2);
+        third = (RadioButton) findViewById(R.id.checkBox_s3);
+
+        if(useAPI) {
+
+            ApiClient client = new ApiClient();
+            ByTypeApi byType = new ByTypeApi();
+
+            try {
+
+                List<Robot> robotList = byType.robotsGet();
+                first.setText(robotList.get(0).getId().toString());
+                second.setText(robotList.get(1).getId().toString());
+                third.setText(robotList.get(2).getId().toString());
+
+            } catch(ApiException e) {
+
+                // exception
+            }
+
+        }
+
         // Implements an OnClickListener for button_back
-        Button button_back = (Button) findViewById(R.id.button9);
+        Button button_back = (Button) findViewById(R.id.robot_back);
+        Button button_new = (Button) findViewById(R.id.new_robot);
+        Button button_edit = (Button) findViewById(R.id.edit_robot);
+        Button button_delete = (Button) findViewById(R.id.delete_robot);
+
+        first = (RadioButton) findViewById(R.id.checkBox3);
+
         button_back.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -38,21 +83,68 @@ public class ListRobotsActivity extends AppCompatActivity
             }
         });
 
-        ApiClient client = new ApiClient();
-
-        //LinearLayout layout = (LinearLayout) findViewById(R.layout.activity_eigth);
-        RadioButton robotListItem = new RadioButton(getApplicationContext());
-        robotListItem.setText("Button ");
-        //layout.addView(robotListItem);
-
-
-        //View layout = (View) findViewById(R.layout.activity_eigth);
-        for(int i=0; i < 5; i++)
+        button_new.setOnClickListener(new View.OnClickListener()
         {
-            //layout.addView(robotListItem);
-        }
+            @Override
+            public void onClick(View v)
+            {
+                if(useAPI) {
+
+                    ApiClient client = new ApiClient();
+                    ByIDApi byID = new ByIDApi();
+                    Robot newBot = new Robot();
+
+                    String str = "";
+
+                    try {
+
+                        byID.robotsRobotIDPut(str, newBot);
+
+                    } catch(ApiException e) {
+
+                        // exception
+                    }
+                }
+            }
+        });
+
+        button_edit.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(useAPI) {
+
+                    ApiClient client = new ApiClient();
+                    ByIDApi byID = new ByIDApi();
+                    Robot newBot = new Robot();
 
 
+                }
+            }
+        });
+
+        button_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (useAPI) {
+
+                    ApiClient client = new ApiClient();
+                    ByIDApi byID = new ByIDApi();
+
+                    String str = first.getText().toString();
+
+                    try {
+
+                        byID.robotsRobotIDDelete(str);
+
+                    } catch(ApiException e) {
+
+                        // exception
+                    }
+                }
+            }
+        });
 
     }
 
