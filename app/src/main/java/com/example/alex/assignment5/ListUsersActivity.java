@@ -7,27 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
-
-import java.util.List;
-
-import io.swagger.client.ApiClient;
-import io.swagger.client.ApiException;
-import io.swagger.client.api.ByIDApi;
-import io.swagger.client.api.ByTypeApi;
-import io.swagger.client.model.Sensor;
-import io.swagger.client.model.User;
+import android.widget.ImageButton;
 
 /**
  * Created by Alex on 3/27/2016.
  */
 public class ListUsersActivity extends AppCompatActivity
 {
-    boolean useAPI;
-    RadioButton first;
-    RadioButton second;
-    RadioButton third;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -35,106 +21,15 @@ public class ListUsersActivity extends AppCompatActivity
         setContentView(R.layout.activity_sixth);
 
         Intent intent = getIntent();
-        useAPI = false;
-
-        first = (RadioButton) findViewById(R.id.checkBox_s1);
-        second = (RadioButton) findViewById(R.id.checkBox_s2);
-        third = (RadioButton) findViewById(R.id.checkBox_s3);
-
-        if(useAPI) {
-
-            ApiClient client = new ApiClient();
-            ByTypeApi byType = new ByTypeApi();
-
-            try {
-
-                List<User> userList = byType.usersGet();
-                first.setText(userList.get(0).getId().toString());
-                second.setText(userList.get(1).getId().toString());
-                third.setText(userList.get(2).getId().toString());
-
-            } catch(ApiException e) {
-
-                // exception
-            }
-
-        }
 
         // Implements an OnClickListener for button_back
-        Button button_back = (Button) findViewById(R.id.user_back);
-        Button button_new = (Button) findViewById(R.id.new_user);
-        Button button_edit = (Button) findViewById(R.id.edit_user);
-        Button button_delete = (Button) findViewById(R.id.delete_user);
-
-        first = (RadioButton) findViewById(R.id.checkBox_s1);
-
+        ImageButton button_back = (ImageButton) findViewById(R.id.button_return);
         button_back.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 finish();
-            }
-        });
-
-        button_new.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if(useAPI) {
-
-                    ApiClient client = new ApiClient();
-                    ByIDApi byID = new ByIDApi();
-                    User newUser = new User();
-
-                    String str = "";
-
-                    try {
-
-                        byID.usersUserIDPut(str, newUser);
-
-                    } catch(ApiException e) {
-
-                        // exception
-                    }
-                }
-            }
-        });
-
-        button_edit.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if(useAPI) {
-
-                    ApiClient client = new ApiClient();
-                    ByIDApi byID = new ByIDApi();
-                    User newUser = new User();
-                }
-            }
-        });
-
-        button_delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (useAPI) {
-
-                    ApiClient client = new ApiClient();
-                    ByIDApi byID = new ByIDApi();
-
-                    String str = first.getText().toString();
-
-                    try {
-
-                        byID.usersUserIDDelete(str);
-
-                    } catch(ApiException e) {
-
-                        // exception
-                    }
-                }
             }
         });
     }

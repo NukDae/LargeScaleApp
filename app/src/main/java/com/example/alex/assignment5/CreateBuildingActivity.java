@@ -21,11 +21,6 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import io.swagger.client.ApiClient;
-import io.swagger.client.ApiException;
-import io.swagger.client.api.ByIDApi;
-import io.swagger.client.model.Building;
-
 /**
  * Created by Alex on 3/27/2016.
  */
@@ -66,26 +61,13 @@ public class CreateBuildingActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                if(useAPI) {
 
-                    ApiClient client = new ApiClient();
-                    ByIDApi byID = new ByIDApi();
-                    Building newBuild = new Building();
 
                     int layout = radioGroup.getCheckedRadioButtonId();
                     RadioButton chosenLayout = (RadioButton) findViewById(layout);
 
                     EditText name = (EditText) findViewById(R.id.layoutNameField);
 
-                    try {
-
-                        byID.buildingsBuildingIDPut(name.getText().toString(), newBuild);
-
-                    } catch(ApiException e) {
-
-                        // exception
-                    }
-                }
                 finish();
             }
         });
