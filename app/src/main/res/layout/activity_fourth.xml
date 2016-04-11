@@ -37,7 +37,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/toUsers"
         android:layout_alignStart="@+id/toUsers"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        android:clickable="true" />
 
     <ImageButton
         android:layout_width="wrap_content"

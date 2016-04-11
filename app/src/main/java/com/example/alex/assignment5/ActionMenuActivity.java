@@ -106,9 +106,12 @@ public class ActionMenuActivity extends AppCompatActivity implements Progress.Pr
             }
         });
 
-
     }
 
+    public void goToNotifications(View v) {
+        Intent intent = new Intent(this, NotificationDisplay.class);
+        startActivity(intent);
+    }
     public void goToUsers(View v)
     {
         Intent intent = new Intent(this, ListUsersActivity.class);

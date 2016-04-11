@@ -1,7 +1,6 @@
 package com.example.alex.assignment5;
 import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -126,11 +124,8 @@ public class Progress extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_progress, container, false);
+        View view = inflater.inflate(R.layout.notifications, container, false);
         ArrayList<String> temp = new ArrayList<String>();
-
-
-        //temp.add(new ProgressEntry(id, msgtype, 0, 0));
 
         // Links Java side with the xml side for the ListView
         entries = (ListView) view.findViewById(R.id.progressList);
@@ -142,18 +137,6 @@ public class Progress extends Fragment
         Notifier notifier = new Notifier("Team2User1",adapter);
         ArrayList<String> notiflist = notifier.getNotificationList();
 
-        // Inflate the layout for this fragment
-        add = (Button) view.findViewById(R.id.addEntry);
-        add.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                //adapter.add(new ProgressEntry("test", "test",0,0));
-                adapter.add("a message");
-                adapter.notifyDataSetChanged();
-            }
-        });
         return view;
     }
 
@@ -181,7 +164,7 @@ public class Progress extends Fragment
     // These methods pass data from the fragment
     public interface ProgressInteractionListener
     {
-        public void sendDeletedData(int data);
+        void sendDeletedData(int data);
     }
 
     // Custom adapter that allows you to handle interactions with the listview views
